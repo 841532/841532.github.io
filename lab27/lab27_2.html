@@ -2,45 +2,46 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаба 7_2</title>
-    <style>
-        .placeholder {
-            color: blue;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Лаба 7_2</title>
+	<style>
+		.data-placeholder:-moz-placeholder {
+			color: blue;
+		}
+
+		.data-placeholder::-webkit-input-placeholder {
+			color: blue;
+		}
+
+		div {
+			color: blue;
+			font-size: 12px;
+		}
+	</style>
 </head>
 
 <body>
-    <input type="text" data-placeholder="Ввод" />
-</body>
-<script>
-    'use strict';
-    let input = document.querySelector("input[data-placeholder]");
-    let placeholderText = input.getAttribute("data-placeholder");
-    input.setAttribute("data-toggle", "tooltip");
-    input.setAttribute("data-placement", "top");
-    input.setAttribute("data-title", placeholderText);
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip({
-            trigger: 'focus'
-        });
-    });
-    input.classList.add("placeholder");
-    if (input.value === '') {
-        input.placeholder = placeholderText;
-    }
-    input.addEventListener("focus", () => {
-        input.placeholder = '';
-    });
-    input.addEventListener("blur", () => {
-        if (input.value === '') {
-            input.placeholder = placeholderText;
-        }
-    });
- </sript>
+	<div></div>
+	<input type="text" class="data-placeholder" data-placeholder="строка">
 
+	<script>
+		'use strict';
+
+		let input = document.querySelector(".data-placeholder");
+		let div = document.querySelector("div");
+		input.onfocus = function () {
+			div.innerHTML = input.getAttribute("data-placeholder");
+			input.setAttribute("data-placeholder", "строка");
+		};
+
+		input.onblur = function () {
+			input.setAttribute("data-placeholder", div.innerHTML);
+			div.innerHTML = "";
+		};
+
+	</script>
+</body>
 
 </html>
