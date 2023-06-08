@@ -1,6 +1,6 @@
 'use strict'
 
-import fib from './lab9.js'
+import fib from './lab23/lab9.js'
 
 /**
  * Программа возвращает дробную часть числа num.
