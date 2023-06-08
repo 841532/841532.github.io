@@ -2,47 +2,42 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Лаба 7_2</title>
-	<style>
-		.placeholder:-moz-placeholder {
-			color: blue;
-		}
-
-		.placeholder::-webkit-input-placeholder {
-			color: blue;
-		}
-
-		div {
-			color: blue;
-			font-size: 12px;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаба 7_2</title>
+    <style>
+        .placeholder {
+            color: blue;
+        }
+    </style>
 </head>
 
 <body>
-	<div></div>
-	<input type="text" class="placeholder" placeholder="строка">
+    <input type="text" data-placeholder="Ввод"/>
+    <script>
+        'use strict';
+        const inputs = document.querySelectorAll('input[data-placeholder]');
+        inputs.forEach(input => {
+            const placeholderText = input.getAttribute('data-placeholder');
+            input.value = placeholderText;
+            input.classList.add('placeholder');
 
-	<script>
-		'use strict';
+            input.addEventListener('focus', function () {
+                input.classList.remove('placeholder');
+                if (input.value === placeholderText) {
+                    input.value = "";
+                }
+            });
 
-		let input = document.querySelector(".placeholder");
-		let div = document.querySelector("div");
-
-		input.onfocus = function () {
-			div.innerHTML = input.getAttribute("placeholder");
-			input.setAttribute("placeholder", "");
-		};
-
-		input.onblur = function () {
-			input.setAttribute("placeholder", div.innerHTML);
-			div.innerHTML = "";
-		};
-
-	</script>
+            input.addEventListener('blur', function () {
+                if (input.value === "") {
+                    input.value = placeholderText;
+                    input.classList.add('data-placeholder');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
