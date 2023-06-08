@@ -73,7 +73,7 @@ export function truncate(str, max_length) {
  * @returns {string] new_str, строка без символа дефиса.
  */
 
-export function camelize(str){
+export function camelize(str) {
     let buff_str = str.split("-")
     let new_str = ""
 
@@ -95,13 +95,13 @@ export function camelize(str){
  * @returns {array}  mas, массив, заполненный члена последовательности итальянского математика.
  */
 
-export function fibs(n){  
-        let mas = []
-        for (let i = 0; i < n; i++) {
-          mas.push(fib(i))
-        }
+export function fibs(n) {
+    let mas = []
+    for (let i = 0; i < n; i++) {
+        mas.push(fib(i))
+    }
 
-        return mas
+    return mas
 }
 
 /**
@@ -111,9 +111,9 @@ export function fibs(n){
  * @returns {array} отсортированный по убыванию массив, полученный в результате выполнения анониманой функции.
  */
 
-export function  arrReverseSorted(arr) {
+export function arrReverseSorted(arr) {
     let arr_copy = arr.slice();
-    
+
     return arr_copy.sort(function (a, b) {
         return b - a
     })
@@ -128,6 +128,6 @@ export function  arrReverseSorted(arr) {
 
 export function unique(arr) {
     let arr_copy = arr
-    
+
     return Array.from(new Set(arr_copy))
 }
