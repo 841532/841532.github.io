@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sen:wght@400..800&display=swap');
+        .sen-sen {
+        font-family: "Sen", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        }
+        .inter-inter {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        }
+        .categories {
+            width: 1280px;
+            height: 324px;
+            margin-top: 0px;
+            margin-left: 80px;
+        }
+        h2 {
+            font-family: Sen;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 48px;
+            letter-spacing: -2px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+        }
+        .categories h2 {
+            width: 302px;
+            height: 48px;
+            margin-top: 0px;
+            margin-left: 489px;
+        }
+        .categories .articles {
+            width: 1280px;
+            height: 228px;
+
+            margin-top: 48px;
+            display: flex;
+            gap: 32px;
+        }
+        .categories .articles article {
+            width: 296px;
+            height: 228px;
+            border: 1px solid #d3d4d6;
+        }
+
+        .iconplace {
+            width: 48px;
+            height: 48px;
+            margin-left: 32px;
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            background-image: url('icon-background.svg');
+            justify-content: center;
+        }
+
+        h3 {
+            font-family: Sen;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 40px;
+            letter-spacing: -1px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+        }
+
+        .categories .articles h3 {
+            margin-left: 32px;
+            margin-top: 16px;
+        }
+
+        .body1 {
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #6D6E76;
+        }
+
+        .categories .articles .body1 {
+            margin-top: 4px;
+            margin-left: 32px;
+            width: 232px;
+            height: 56px;
+        }
+
+        .categories .articles .special {
+            background-color: #FFD050;
+            border: 0;
+            width: 298px;
+            height: 230px;
+        }
+
+        .categories .articles .iconplace {
+            justify-content: center;
+        }
+
+        .specialpost {
+            position: relative;
+            width: 1280px;
+            height: 705px;
+            margin-top: 128px;
+            margin-left: 80px;
+            display: flex;
+        }
+        .specialpost img {
+            position: absolute;
+            z-index: 1;
+        }
+        .specialpost .content {
+            position: absolute;
+            z-index: 2;
+            background-color: #FFFFFF;
+            margin-top: 121px;
+            margin-left: 574px;
+            width: 706px;
+            height: 584px;
+        }
+
+        .cap1 {
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 3px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+        }
+
+        .specialpost .content p.cap1 {
+            margin-left: 80px;
+            margin-top: 80px;
+            height: 20px;
+            width: 189px;
+        }
+
+        h1 {
+            font-family: Sen;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 64px;
+            letter-spacing: -2px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+        }
+        .specialpost .content h1 {
+            margin: 0;
+            margin-top: 24px;
+            margin-left: 80px;
+            width: 546px;
+            height: 192px;
+        }
+        .specialpost .content p.body1 {
+            width: 546px;
+            height: 84px;
+            margin-left: 80px;
+            margin-top: 16px;
+        }
+        .specialpost .content a {
+            background-color: #FFD050;
+            color: #232536;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 48px;
+            padding-right: 48px;
+            display: inline-block;
+            font-family: Sen;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-left: 80px;
+            margin-top: 32px;
+        }
+        .listofauthors {
+            width: 1280px;
+            height: 420px;
+            margin-top: 128px;
+            margin-left: 80px;
+        }
+        .listofauthors h2 {
+            width: 231px;
+            height: 48px;
+            margin: 0;
+            margin-left: 515px;
+        }
+        .listofauthors .authors {
+            margin-left: 80px;
+            margin-top: 48px;
+            display: flex;
+            gap: 32px;
+        }
+        .listofauthors .authors article {
+            width: 296px;
+            height: 324px;
+            background-color: #F4F4F4;
+            justify-items: center;
+        }
+        .listofauthors .authors article .photo {
+            margin-top: 40px;
+        }
+        .listofauthors .authors article h3 {
+            margin: 0;
+            margin-top: 20px;
+            align-self: center;
+        }
+        .listofauthors .authors .hover {
+            background-color: #FBF6EA;
+        }
+        .body2 {
+            font-family: Inter;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #6D6E76;
+        }
+        .social {
+            display: flex;
+            margin-top: 20px;
+            width: 112px;
+            height: 16px;
+            gap: 16px;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        .logos {
+            width: 1237px;
+            height: 52px;
+            margin-left: 94px;
+            margin-top: 96px;
+            display: flex;
+            gap: 87px;
+        }
+        .logos div {
+            width: 135px;
+            height: 52px;
+            margin: 0;
+        }
+        .logos p.body2 {
+            padding: 0;
+            margin: 0;
+            width: 83.83px;
+            height: 20px;
+            opacity: 0.6;
+            text-align: left;
+        }
+        .logos .sen-sen {
+            margin: 0;
+            font-family: Sen;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #6D6E76;
+            width: 135px;
+            height: 32px;
+        }
+        .logos img {
+            width: 1015px;
+            height: 32px;
+            margin-top: 12px;
+        }
+        .testimonials {
+            width: 1280px;
+            height: 464px;
+            margin-left: 80px;
+            margin-top: 96px;
+            background-color: #FBF6EA;
+            display: flex;
+        }
+        .testimonials .content {
+            width: 349px;
+            height: 200px;
+            margin-top: 92px;
+            margin-left: 112px;
+        }
+        .testimonials .content .cap1 {
+            margin: 0;
+        }
+        .testimonials .content .body1 {
+            color: #232536;
+            margin: 0;
+            margin-top: 124px;
+            width: 349px;
+            height: 56px;
+        }
+        hr {
+            height: 310px;
+            width: 0px;
+            margin: 0;
+            margin-top: 80px;
+            margin-left: 80px;
+            border: 1px 0px 0px 0px solid #6D6E76;
+            opacity: 0.4;
+        }
+        .testimonials .mess {
+            margin-left: 96px;
+            margin-top: 80px;
+        }
+        h4 {
+            font-family: Sen;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+        }
+        .testimonials .mess h4 {
+            margin: 0;
+            width: 469px;
+            height: 128px;
+        }
+        .testimonials .mess .profile .div {
+            width: 257px;
+            height: 60px;
+            margin-top: 121px;
+            display: flex;
+        }
+        .testimonials .mess .profile .div p {
+            margin: 0;
+        }
+        .testimonials .mess .profile .div p.sen-sen {
+            font-family: Sen;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #232536;
+            white-space: nowrap;
+        }
+        .ourteam {
+            width: 414px;
+            height: 256px;
+            margin-left: 513px;
+            margin-top: 128px;
+            text-align: center;
+            justify-content: center;
+        }
+        .ourteam h2 {
+            text-align: center;
+            margin: 0;
+        }
+        .ourteam .body1 {
+            text-align: center;
+            margin-top: 16px;
+        }
+        .btnref {
+            background-color: #FFD050;
+            color: #232536;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            padding-left: 48px;
+            padding-right: 48px;
+            display: inline-block;
+            font-family: Sen;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .ourteam .btnref {
+            margin-top: 32px;
+        }
+        footer {
+            width: 1440px;
+            height: 560px;
+            margin-top: 128px;
+            background-color: #232536;
+            display: flex;
+        }
+        footer main {
+            width: 1280px;
+            height: 445px;
+            margin-top: 59px;
+            margin-left: 80px;
+        }
+        .iconfooter {
+            width: 140px;
+            height: 28.35px;
+        }
+        footer .upper {
+            display: flex;
+            height: 29px;
+        }
+        footer .navigation {
+            margin: 0;
+            margin-top: 0px;
+            margin-left: 703px;
+            padding: 0;
+            display: flex;
+        }
+        footer .navigation ul {
+            display: flex;
+            gap: 24px;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+
+        }
+        .sub {
+            width: 1280px;
+            height: 256px;
+            background-color: #2e3040;
+            margin-top: 54.65px;
+            display: flex;
+            border: 1px solid #2e3040;
+            
+        }
+        .sub h2 {
+            width: 562px;
+            height: 96px;
+            margin-left: 64px;
+            margin-top: 80px;
+            color: #FFFFFF;
+        }
+        input {
+            background: transparent;
+            width: 323px;
+            height: 54px;
+            margin-top: 84px;
+            margin-left: 64px;
+            border: 1px solid #4C4C4C;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        input::placeholder {
+            padding-left: 24.92px;
+        }
+        footer button {
+            padding: 0;
+            width: 179px;
+            height: 56px;
+            border: 0;
+            background-color: #FFD050;
+            color: #232536;
+            font-family: Sen;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 24px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            text-align: center;
+            margin-top: 84px;
+            margin-left: 24px;
+        }
+        footer .lower {
+            display: flex;
+        }
+        footer .body1 {
+            font-style: normal;
+            margin-top: 48px;
+        }
+        footer .social-icons-1 {
+            list-style: none;
+            display: flex;
+            gap: 26.67px;
+            margin-left: 775px;
+            margin-top: 60px;
+            padding: 0%;
+        }
+        a {
+            text-decoration: none;
+            color: #FFFFFF;
+            margin: 0px;
+        }
+    </style>
+</head>
+<main>
+<body>
+    <section class="categories">
+        <h2>Choose A Catagory</h2>
+        <div class="articles">
+            <article>
+                <div class="iconplace">
+                    <img src="Icon.svg" alt="Иконка1">
+                </div>
+                <h3>Business</h3>
+                <div class="body1">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
+            </article>
+            <article class="special">
+                <div class="iconplace">
+                    <img src="Iconstartup.svg" alt="Иконка2">
+                </div>
+                <h3>Startup</h3>
+                <div class="body1">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
+            </article>
+            <article>
+                <div class="iconplace">
+                    <img src="iconeconomy.svg" alt="Иконка3">
+                </div>
+                <h3>Economy</h3>
+                <div class="body1">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
+            </article>
+            <article>
+                <div class="iconplace">
+                    <img src="business-and-trade 1.svg" alt="Иконка4">
+                </div>
+                <h3>Technology</h3>
+                <div class="body1">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="specialpost">
+        <img src="close-up-photography-of-man-wearing-sunglasses-1212984.png" alr="close-up-photography-of-man-wearing-sunglasses-1212984">
+        <section class="content">
+            <p class="cap1">WHY WE STARTED</p>
+            <h1>It started out as a simple idea and evolved into our passion</h1>
+            <p class="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <a href="#" class="sen-sen">Discover our story ></a>
+        </section>
+    </section>
+    <section class="listofauthors">
+        <h2>List of Authors</h2>
+        <section class="authors">
+            <article>
+                <img class="photo" src="photo/man-in-yellow-button-up-shirt-wearing-black-framed-eyeglasses-7562313.png" alt="man-in-yellow-button-up-shirt-wearing-black-framed-eyeglasses-7562313">
+                <h3>Floyd Miles</h3>
+                <p class="body2">Content Writer @Company</p>
+                <ul class="social">
+                    <li><a href="#"><img src="Facebook/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Twitter/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Instagram/Negative.svg"></a></li>
+                    <li><a href="#"><img src="LinkedIn/Negative.svg"></a></li>
+                </ul>
+            </article>
+            <article class="hover">
+                <img class="photo" src="photo/woman-in-white-and-black-striped-shirt-wearing-black-sunglasses-3671083.png" alt="woman-in-white-and-black-striped-shirt-wearing-black-sunglasses-3671083">
+                <h3>Dianne Russell</h3>
+                <p class="body2">Content Writer @Company</p>
+                <ul class="social">
+                    <li><a href="#"><img src="Facebook/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Twitter/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Instagram/Negative.svg"></a></li>
+                    <li><a href="#"><img src="LinkedIn/Negative.svg"></a></li>
+                </ul>
+            </article>
+            <article>
+                <img class="photo" src="photo/fashion-woman-cute-shoes-5704849.png" alt="fashion-woman-cute-shoes-5704849">
+                <h3>Jenny Wilson</h3>
+                <p class="body2">Content Writer @Company</p>
+                <ul class="social">
+                    <li><a href="#"><img src="Facebook/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Twitter/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Instagram/Negative.svg"></a></li>
+                    <li><a href="#"><img src="LinkedIn/Negative.svg"></a></li>
+                </ul>
+            </article>
+            <article>
+                <img class="photo" src="photo/content-baker-with-delicious-puff-in-cafeteria-6205509.png" alt="content-baker-with-delicious-puff-in-cafeteria-6205509">
+                <h3>Leslie Alexander</h3>
+                <p class="body2">Content Writer @Company</p>
+                <ul class="social">
+                    <li><a href="#"><img src="Facebook/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Twitter/Negative.svg"></a></li>
+                    <li><a href="#"><img src="Instagram/Negative.svg"></a></li>
+                    <li><a href="#"><img src="LinkedIn/Negative.svg"></a></li>
+                </ul>
+            </article>
+        </section>
+    </section>
+    <section class="logos">
+        <div>
+            <p class="body2">We are</p>
+            <p class="sen-sen">Featured in</p>
+        </div>
+        <img src="Logo Wrapper.svg" alt="Logo Wrapper.svg">
+    </section>
+    <section class="testimonials">
+        <div class="content">
+            <p class="cap1">TESTIMONIALS</p>
+            <p class="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+        <hr>
+        <div class="mess">
+            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+            <section class="profile">
+                <div class="div">
+                    <img src="Profile picture.png" alt="Profile picture">
+                    <div style="margin-left: 16px;">
+                        <p class="sen-sen">Jonathan Vallem</p>
+                        <p class="body1">New york, USA</p>
+                    </div>
+                    <button style="margin-left: 141px; border: 0; padding: 0; background-color: transparent;"><img src="Back button.svg" alt="Back button.svg"></button>
+                    <button style="margin-left: 24px; margin-top: -7px; padding: 0; border: 0; background-color: transparent;"><img src="Next Button.svg" alt="Next button.svg"></button>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="ourteam">
+        <h2>Join our team to be a part of our story</h2>
+        <div class="body1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</div>
+        <a class="btnref" href="#">Join Now</a>
+    </section>
+</main>
+<footer>
+    <main>
+        <section class="upper">
+            <img class="iconfooter" src="Logo.svg" alt="Логотип">
+            <nav class="navigation">
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Privacy Police</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="sub">
+            <h2>Subscribe to our news letter to get latest updates and news</h2>
+            <input type="email" placeholder="Enter Your Email">
+            <button>Subscribe</button>
+        </section>
+        <section class="lower">
+            <address class="body1" style="color: #bdbdc2;">
+                Finstreet 118 2561 Fintown<br>
+                Hello@finsweet.com  020 7993 2905
+            </address>
+            <ul class="social-icons-1">
+                <li><a href="#"><img src="Facebook/Vector.svg"></a></li>
+                <li><a href="#"><img src="Twitter/Vector.svg"></a></li>
+                <li><a href="#"><img src="Instagram/Group.svg"></a></li>
+                <li><a href="#"><img src="LinkedIn/Group.svg"></a></li>
+            </ul>
+        </section>
+    </main>
+</footer>
+</body>
